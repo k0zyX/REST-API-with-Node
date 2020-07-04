@@ -14,6 +14,10 @@ const MovieSchema = new Schema({
     },
     year:Number,
     imdb_score:Number,
+    date:{
+        type:Date,
+        default:Date.now
+    },
     director_id:Schema.Types.ObjectId
 });
 
