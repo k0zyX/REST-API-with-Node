@@ -68,6 +68,21 @@ router.put('/:movie_id', async (req, res) => {
 
 */
 
+
+// Selim tadında yazdığım kendi routerlarım
+// Denendi çalışıyor
+
+router.delete('/:movie_id', async (req, res) => {
+  const promise = await Movie.findByIdAndRemove(
+    req.params.movie_id
+    )
+    console.log(promise)
+    return res.json({ "message": promise})
+})
+
+/*
+Kurs kodu
+
 router.delete('/:movie_id',(req, res, next) => {
   const promise = Movie.findByIdAndRemove(req.params.movie_id);
 
@@ -80,6 +95,8 @@ router.delete('/:movie_id',(req, res, next) => {
   });
 });
 
+
+*/
 
 router.post('/', (req, res, next) => {
   const {title,imdb_score, category, country, year} = req.body;
